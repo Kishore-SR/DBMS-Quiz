@@ -3,7 +3,7 @@ const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Set up the SQLite database
 const dbPath = path.join(__dirname, 'database', 'quiz.db');
@@ -18,6 +18,7 @@ const db = new sqlite3.Database(dbPath, (err) => {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Serve static files from the root directory
 app.use(express.static(path.join(__dirname, '.')));
 
 // Save student to the database
