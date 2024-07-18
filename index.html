@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DBMS Quiz App - Test your knowledge of Database Management Systems.">
+    <meta name="keywords" content="DBMS, Quiz, Database Management Systems, Online Quiz, Education">
+    <meta name="author" content="Kishore S R">
+    <title>DBMS Quiz App</title>
+
+    <link rel="shortcut icon" href="/assets/favicon-img.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles/style.css">
+
+    <!-- Linking Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Start Container -->
+    <div id="start-container">
+        <div id="image-container">
+            <img src="/assets/quiz-img.png" alt="Quiz Image">
+        </div>
+        <div id="form-container">
+            <h1>DBMS IQ Challenge</h1>
+            <form id="start-form">
+                <label for="name">NAME</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+                <label for="usn">USN</label>
+                <input type="text" id="usn" placeholder="Enter your USN" required>
+                <button class="button-37" type="submit">START QUIZ</button>
+            </form>
+        </div>
+    </div>
+    <!-- End Start Container -->
+
+    <!-- Module Container -->
+    <div id="module-container">
+        <h2>Select Module</h2>
+        <div class="info">
+            <i class="ri-information-line"></i>
+            <p>Choose the module to test your understanding level of the concepts...</p>
+        </div>
+        <div class="module-btn-container">
+            <button class="module-btn" data-module="1">Module 1</button>
+            <button class="module-btn" data-module="2">Module 2</button>
+            <button class="module-btn" data-module="3">Module 3</button>
+            <button class="module-btn" data-module="4">Module 4</button>
+            <button class="module-btn" data-module="5">Module 5</button>
+        </div>
+    </div>
+    <!-- End Module Container -->
+
+    <!-- Quiz Container -->
+    <div id="quiz-container" style="display: none;">
+        <div id="question-container" class="window-container">
+            <!-- Question will be dynamically inserted here -->
+        </div>
+        <div id="options-container" class="window-container">
+            <!-- Options will be dynamically inserted here -->
+        </div>
+
+        <div id="button-container">
+            <button id="prev-btn" class="button-37">Previous</button>
+            <button id="next-btn" class="button-37">Next</button>
+            <button id="submit-btn" class="button-37" style="display: none;">Submit</button>
+            <button id="show-results-btn" class="button-37" style="display: none;">Show Results</button>
+        </div>
+    </div>
+    <!-- End Quiz Container -->
+
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>

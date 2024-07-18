@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600&display=swap");
+
+/* Reset and global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+
+}
+
+:root {
+  --yellow: #ffbd13;
+  --blue: #4383ff;
+  --blue-d-1: #3278ff;
+  --light: #f5f5f5;
+  --grey: #aaa;
+  --white: #fff;
+  --shadow: 8px 8px 30px rgba(0, 0, 0, 0.05);
+  --black-alt: rgb(73, 72, 72);
+}
+
+/* Body and wrapper styles */
+body{
+  background: var(--light);
+}
+.body-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 86vh;
+  padding: 1rem;
+}
+
+.wrapper {
+  background: var(--white);
+  padding: 2rem;
+  max-width: 576px;
+  width: 100%;
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.wrapper h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Rating and star animation styles */
+.rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 0.5rem;
+  font-size: 2rem;
+  color: var(--yellow);
+  margin-bottom: 2rem;
+}
+
+.rating .star {
+  cursor: pointer;
+}
+
+.rating .star.active {
+  opacity: 0;
+  animation: animate 0.5s calc(var(--i) * 0.1s) ease-in-out forwards;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.rating .star:hover {
+  transform: scale(1.1);
+}
+
+/* Textarea and button group styles */
+textarea {
+  width: 100%;
+  background: var(--light);
+  padding: 1rem;
+  font-size: 16px;
+  outline: none;
+  resize: none;
+  margin-bottom: 0.5rem;
+  border: 1px solid #e4dbdb;
+  border-radius: 8px;
+}
+
+/* submit and cancel button stylings  */
+.btn-group {
+  display: flex;
+  grid-gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-group .btn {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.btn-group .btn.submit {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.btn-group .btn.submit:hover {
+  background: var(--blue-d-1);
+}
+.btn.cancel {
+  background-color: #f57b72; /* Red */
+  color: white;
+}
+
+.btn.submit {
+  background-color: #4caf50; /* Green */
+  color: white;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+#marks-display {
+  margin: 10px auto;
+  width: 70%;
+  padding: 10px;
+  background-color: #bef8c5;
+  border-radius: 8px;
+}
+
+
+/* github btn starts */
+.git-section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+}
+.github-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 15px;
+  gap: 15px;
+  background-color: var(--black-alt);
+  outline: 3px var(--black-alt) solid;
+  outline-offset: -3px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 400ms;
+}
+.github-button .text {
+  font-family: "Roboto Mono", monospace;
+  color: white;
+  font-weight: 500;
+  font-size: 1.2em;
+  transition: 400ms;
+}
+.github-button svg path {
+  transition: 400ms;
+}
+.github-button:hover {
+  background-color: transparent;
+}
+.github-button:hover .text {
+  color: #181717;
+}
+.github-button:hover svg path {
+  fill: #181717;
+}
+/* github btn ends */

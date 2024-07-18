@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DBMS Quiz App - Test your knowledge of Database Management Systems.">
+    <meta name="keywords" content="DBMS, Quiz, Database Management Systems, Online Quiz, Education">
+    <meta name="author" content="Kishore S R">
+
+    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/assets/favicon-img.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="/styles/feedback.css">
+    <title>Feedback | DBMS Quiz</title>
+</head>
+
+<body>
+    <section class="body-main">
+        <div class="wrapper">
+            <div id="marks-display"></div>
+            <h3>Feedback</h3>
+            <div class="rating">
+                <input type="number" name="rating" hidden>
+                <i class='bx bx-star star' style="--i: 0;"></i>
+                <i class='bx bx-star star' style="--i: 1;"></i>
+                <i class='bx bx-star star' style="--i: 2;"></i>
+                <i class='bx bx-star star' style="--i: 3;"></i>
+                <i class='bx bx-star star' style="--i: 4;"></i>
+            </div>
+            <textarea id="feedback-text" name="opinion" cols="30" rows="5"
+                placeholder="Type your feedback..."></textarea>
+            <div class="btn-group">
+                <button id="cancel-btn" class="btn cancel">Cancel</button>
+                <button id="send-feedback-btn" class="btn submit">Submit Feedback</button>
+            </div>
+        </div>
+    </section>
+    <section class="git-section">
+        <button class="github-button">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M12 0.296997C5.37 0.296997 0 5.67 0 12.297C0 17.6 3.438 22.097 8.205 23.682C8.805 23.795 9.025 23.424 9.025 23.105C9.025 22.82 9.015 22.065 9.01 21.065C5.672 21.789 4.968 19.455 4.968 19.455C4.422 18.07 3.633 17.7 3.633 17.7C2.546 16.956 3.717 16.971 3.717 16.971C4.922 17.055 5.555 18.207 5.555 18.207C6.625 20.042 8.364 19.512 9.05 19.205C9.158 18.429 9.467 17.9 9.81 17.6C7.145 17.3 4.344 16.268 4.344 11.67C4.344 10.36 4.809 9.29 5.579 8.45C5.444 8.147 5.039 6.927 5.684 5.274C5.684 5.274 6.689 4.952 8.984 6.504C9.944 6.237 10.964 6.105 11.984 6.099C13.004 6.105 14.024 6.237 14.984 6.504C17.264 4.952 18.269 5.274 18.269 5.274C18.914 6.927 18.509 8.147 18.389 8.45C19.154 9.29 19.619 10.36 19.619 11.67C19.619 16.28 16.814 17.295 14.144 17.59C14.564 17.95 14.954 18.686 14.954 19.81C14.954 21.416 14.939 22.706 14.939 23.096C14.939 23.411 15.149 23.786 15.764 23.666C20.565 22.092 24 17.592 24 12.297C24 5.67 18.627 0.296997 12 0.296997Z"
+                    fill="white"></path>
+            </svg>
+            <a href="https://github.com/Kishore-SR/DBMS-Quiz/" target="_blank">
+                <p class="text">Source Code</p>
+            </a>
+        </button>
+    </section>
+    <script>
+        // Star animation
+        const allStar = document.querySelectorAll('.rating .star');
+        const ratingValue = document.querySelector('.rating input');
+
+        allStar.forEach((item, idx) => {
+            item.addEventListener('click', function () {
+                let click = 0;
+                ratingValue.value = idx + 1;
+
+                allStar.forEach(i => {
+                    i.classList.replace('bxs-star', 'bx-star');
+                    i.classList.remove('active');
+                });
+                for (let i = 0; i < allStar.length; i++) {
+                    if (i <= idx) {
+                        allStar[i].classList.replace('bx-star', 'bxs-star');
+                        allStar[i].classList.add('active');
+                    } else {
+                        allStar[i].style.setProperty('--i', click);
+                        click++;
+                    }
+                }
+            });
+        });
+        // Star animation ends
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const feedbackText = document.getElementById('feedback-text');
+            const sendFeedbackBtn = document.getElementById('send-feedback-btn');
+            const cancelBtn = document.getElementById('cancel-btn');
+            const stars = document.querySelectorAll('.star');
+            let ratingValue = 0;
+
+            const score = sessionStorage.getItem('score');
+            const module = sessionStorage.getItem('module');
+            const studentId = sessionStorage.getItem('studentId');
+            const marksDisplay = document.getElementById('marks-display');
+            marksDisplay.textContent = `Module ${module} Score: ${score} / 5`; // Display score out of 5
+
+            stars.forEach(star => {
+                star.addEventListener('click', () => {
+                    ratingValue = parseInt(star.style.getPropertyValue('--i')) + 1;
+                    document.querySelector('input[name="rating"]').value = ratingValue;
+                    updateStarRating(ratingValue);
+                });
+            });
+
+            function updateStarRating(rating) {
+                stars.forEach((star, index) => {
+                    if (index < rating) {
+                        star.classList.add('bxs-star');
+                        star.classList.remove('bx-star');
+                    } else {
+                        star.classList.add('bx-star');
+                        star.classList.remove('bxs-star');
+                    }
+                });
+            }
+
+            sendFeedbackBtn.addEventListener('click', async () => {
+                const feedback = feedbackText.value.trim();
+                const rating = ratingValue;
+
+                if (!rating || !feedback) {
+                    alert('Please rate your understanding and provide feedback.');
+                    return;
+                }
+
+                if (!studentId) {
+                    alert('Student ID not found. Please try again.');
+                    return;
+                }
+
+                try {
+                    const response = await fetch('/api/saveFeedback', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ studentId, rating, feedback, module })
+                    });
+                    if (!response.ok) {
+                        throw new Error('Failed to save feedback');
+                    }
+                    alert('Feedback sent successfully.');
+
+                    window.location.href = 'index.html'; // Redirect to main module selection screen
+                } catch (error) {
+                    console.error('Error saving feedback:', error);
+                }
+            });
+
+            cancelBtn.addEventListener('click', () => {
+                window.location.href = 'index.html'; // Redirect to main module selection screen
+            });
+        });
+
+    </script>
+</body>
+
+</html>
