@@ -1,8 +1,8 @@
-# DBMS IQ Challenge
+# DBMS Quiz App
 
 This project is a quiz application built using HTML, CSS, JavaScript for the frontend, and Node.js with SQLite for the backend and database management. The application allows students to take quizzes on different modules, view their scores, and provide feedback.
 
-[![Project Link](https://img.shields.io/badge/Project%20Link-37a779?style=for-the-badge)](https://dbms.web.app/)
+<!-- [![Project Link](https://img.shields.io/badge/Project%20Link-37a779?style=for-the-badge)](https://dbms.web.app/) -->
 
 ## Key Features
 
@@ -74,7 +74,6 @@ Open your web browser and go to [http://localhost:3000/](http://localhost:3000/)
         "options": ["Option A", "Option B", "Option C", "Option D"],
         "correctAnswer": 1
       },
-      ...
     ]
     ```
 
@@ -117,25 +116,25 @@ Open your web browser and go to [http://localhost:3000/](http://localhost:3000/)
 
 
 ## Screenshots
-### **Student Registration:** Enter name and USN
+##### **Student Registration:** Enter name and USN
 ![image](https://github.com/user-attachments/assets/64ad709f-5b1b-4eaa-9dfc-ef0565f83dec)
 
-### **Module Selection:** Choose from 5 modules
+##### **Module Selection:** Choose from 5 modules
 ![image](https://github.com/user-attachments/assets/913b2819-6c14-474a-9d0c-0535a614990b)
 
-### **Questions Database:** Questions are fetched from database
+##### **Questions Database:** Questions are fetched from database
 ![image](https://github.com/user-attachments/assets/bb89245c-7176-4633-a564-373d06593ef6)
 
-### **Quiz Interface:** Questions with options
+##### **Quiz Interface:** Questions with options
 ![image](https://github.com/user-attachments/assets/d04cfa3a-489a-4df4-a1a7-bd4160eb56b3)
 
-### **Feedback Form:** 5-star rating and comments 
+##### **Feedback Form:** 5-star rating and comments 
 ![image](https://github.com/user-attachments/assets/1450626f-db01-4f98-8b82-01832952bfc3)
 
-### **Students Database:** Student details gets updated automatically
+##### **Students Database:** Student details gets updated automatically
 ![image](https://github.com/user-attachments/assets/ce5e2d6f-d755-41a4-bf9e-4a3fcf9b1db0)
 
-### **Feedback Database:** Feedback will be stored separately
+##### **Feedback Database:** Feedback will be stored separately
 ![image](https://github.com/user-attachments/assets/3a2c2518-ef41-4b66-a39c-489cb8aa0b1f)
 
 ## Connect Here
