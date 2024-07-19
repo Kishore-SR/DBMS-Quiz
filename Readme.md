@@ -2,7 +2,7 @@
 
 This project is a quiz application built using HTML, CSS, JavaScript for the frontend, and Node.js with SQLite for the backend and database management. The application allows students to take quizzes on different modules, view their scores, and provide feedback.
 
-<!-- [![Project Link](https://img.shields.io/badge/Project%20Link-37a779?style=for-the-badge)](https://dbms.web.app/) -->
+[![Preview Website](https://img.shields.io/badge/Preview%20Website-37a779?style=for-the-badge)](#screenshots)
 
 ## Key Features
 
